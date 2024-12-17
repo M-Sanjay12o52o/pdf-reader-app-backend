@@ -12,6 +12,10 @@ app.use(express.json());
 
 const upload = multer({ dest: "uploads/" });
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 // File Upload Endpoint
 app.post("/upload", upload.single("file"), async (req, res) => {
   try {
